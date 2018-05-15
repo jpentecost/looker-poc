@@ -27,38 +27,38 @@ persist_with: looker_poc_project_default_datagroup
 
 explore: factcalldetail {
   label: "Call Detail Record Data"
-  view_label: "Call Facts"
+  view_label: "Fact - Call Detail"
 
   join: dimcallcharacteristics {
-    view_label: "Dimension - Call Characteristics"
+    view_label: "Dim - Call Characteristics"
     type: inner
     relationship: many_to_one
     sql_on: ${factcalldetail.callcharkey} = ${dimcallcharacteristics.callcharkey} ;;
   }
 
   join: dimcustomer {
-    view_label: "Dimension - Customer"
+    view_label: "Dim - Customer"
     type: inner
     relationship: many_to_one
     sql_on: ${factcalldetail.customerkey} = ${dimcustomer.customerkey} ;;
   }
 
   join: dimdate {
-    view_label: "Dimension - Date"
+    view_label: "Dim - Date"
     type: inner
     relationship: many_to_one
     sql_on: ${factcalldetail.datekey} = ${dimdate.datekey} ;;
   }
 
   join: dimexitpoint {
-    view_label: "Dimension - Exit Point"
+    view_label: "Dim - Exit Point"
     type: inner
     relationship: many_to_one
     sql_on: ${factcalldetail.exitpointkey} = ${dimexitpoint.exitpointkey} ;;
   }
 
   join: dimtime {
-    view_label: "Dimension - Time"
+    view_label: "Dim - Date"
     type: inner
     relationship: many_to_one
     sql_on: ${factcalldetail.timekey} = ${dimtime.timekey} ;;

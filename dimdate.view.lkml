@@ -108,6 +108,7 @@ view: dimdate {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.fulldate ;;
+    drill_fields: [factcalldetail.customerkey]
   }
 
   dimension: halfyear {
@@ -197,10 +198,5 @@ view: dimdate {
   dimension: year {
     type: number
     sql: ${TABLE}.year ;;
-  }
-
-  measure: count {
-    type: count
-    drill_fields: [monthname]
   }
 }

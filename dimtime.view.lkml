@@ -68,9 +68,4 @@ view: dimtime {
     type: string
     sql: ${TABLE}.timelabel ;;
   }
-
-  measure: count {
-    type: count
-    drill_fields: []
-  }
 }

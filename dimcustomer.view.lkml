@@ -219,8 +219,10 @@ view: dimcustomer {
     sql: ${TABLE}.turnupdate ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: []
+  dimension: tenure {
+    type: number
+    sql: DATEDIFF(days,${turnupdate_raw}, COALESCE(${turndowndate_raw},CURRENT_DATE)) ;;
   }
+
+
 }

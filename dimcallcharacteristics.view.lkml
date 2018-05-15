@@ -16,6 +16,12 @@ view: dimcallcharacteristics {
     sql: ${TABLE}.callcompletioncode ;;
   }
 
+  dimension: call_completed {
+    type: yesno
+    sql: ${callcompletioncode} = 'N' ;;
+  }
+
+
   dimension: callcompletionname {
     type: string
     sql: ${TABLE}.callcompletionname ;;
@@ -77,10 +83,5 @@ view: dimcallcharacteristics {
       year
     ]
     sql: ${TABLE}.modifiedtimestamp ;;
-  }
-
-  measure: count {
-    type: count
-    drill_fields: [ctistatusname, cdrinsertmethodname, calldispositionname, callcompletionname]
   }
 }

@@ -43,9 +43,4 @@ view: dimexitpoint {
     ]
     sql: ${TABLE}.modifiedtimestamp ;;
   }
-
-  measure: count {
-    type: count
-    drill_fields: [exitpointname]
-  }
 }
