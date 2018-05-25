@@ -1,4 +1,4 @@
-connection: "dw_poc-redshift"
+connection: "dw_poc-snowflake"
 
 # include all the views
 include: "*.view"
@@ -25,8 +25,9 @@ persist_with: looker_poc_project_default_datagroup
 
 #explore: factcalldetail {}
 
+explore: time_sf {}
 explore: factcalldetail {
-  label: "Call Detail Record Data (Redshift)"
+  label: "Call Detail Record Data (Snowflake)"
   view_label: "Fact - Call Detail"
 
   join: dimcallcharacteristics {
@@ -62,5 +63,5 @@ explore: factcalldetail {
     type: inner
     relationship: many_to_one
     sql_on: ${factcalldetail.timekey} = ${dimtime.timekey} ;;
-    }
+  }
 }

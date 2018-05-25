@@ -1,5 +1,10 @@
+# view: factcalldetail_sf {
+#   extends: [factcalldetail]
+#   sql_table_name: PUBLIC.factcalldetail ;;
+# }
+
 view: factcalldetail {
-  sql_table_name: poc_dw.factcalldetail ;;
+  sql_table_name: PUBLIC.factcalldetail ;;
 
   dimension: ani {
     type: string
@@ -60,7 +65,7 @@ view: factcalldetail {
     ]
     sql: ${TABLE}.callstarttime ;;
   }
-
+#
   dimension: months_since_startup {
     type: number
     sql: DATEDIFF(days,${dimcustomer.turnupdate_raw}, ${callstarttime_raw}) ;;
