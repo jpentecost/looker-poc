@@ -1,3 +1,7 @@
+view: sf_dimtime {
+  extends: [dimtime]
+  sql_table_name: public.dimtime ;;
+}
 view: dimtime {
   sql_table_name: poc_dw.dimtime ;;
 

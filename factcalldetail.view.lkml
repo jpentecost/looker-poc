@@ -4,7 +4,7 @@
 # }
 
 view: factcalldetail {
-  sql_table_name: PUBLIC.factcalldetail ;;
+  sql_table_name: poc_dw.factcalldetail ;;
 
   dimension: ani {
     type: string

@@ -25,7 +25,7 @@ persist_with: looker_poc_project_default_datagroup
 
 #explore: factcalldetail {}
 
-explore: time_sf {}
+explore: sf_dimtime {}
 explore: factcalldetail {
   label: "Call Detail Record Data (Snowflake)"
   view_label: "Fact - Call Detail"
