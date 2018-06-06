@@ -25,7 +25,6 @@ persist_with: looker_poc_project_default_datagroup
 
 #explore: factcalldetail {}
 
-explore: sf_dimtime {}
 explore: factcalldetail {
   label: "Call Detail Record Data (Snowflake)"
   view_label: "Fact - Call Detail"
@@ -65,5 +64,3 @@ explore: factcalldetail {
     sql_on: ${factcalldetail.timekey} = ${dimtime.timekey} ;;
   }
 }
-
-explore: test_dt {}
