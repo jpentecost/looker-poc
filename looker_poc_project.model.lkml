@@ -30,6 +30,11 @@ explore: factcalldetail {
   view_label: "Fact - Call Detail"
   group_label: "Contact Solutions Data"
 
+  access_filter: {
+    user_attribute: division
+    field: dimcustomer.division
+  }
+
   join: dimcallcharacteristics {
     view_label: "Dim - Call Characteristics"
     type: inner
