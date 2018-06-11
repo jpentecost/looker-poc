@@ -1,3 +1,8 @@
+view: dimexitpoint_sf {
+  extends: [dimexitpoint]
+  sql_table_name: public.dimexitpoint ;;
+}
+
 view: dimexitpoint {
   sql_table_name: poc_dw.dimexitpoint ;;
 

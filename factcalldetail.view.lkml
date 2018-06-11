@@ -1,7 +1,7 @@
-# view: factcalldetail_sf {
-#   extends: [factcalldetail]
-#   sql_table_name: PUBLIC.factcalldetail ;;
-# }
+view: factcalldetail_sf {
+  extends: [factcalldetail]
+  sql_table_name: PUBLIC.factcalldetail ;;
+}
 
 view: factcalldetail {
   sql_table_name: poc_dw.factcalldetail ;;
@@ -19,22 +19,25 @@ view: factcalldetail {
   dimension: bridgecallcount {
     type: number
     sql: ${TABLE}.bridgecallcount ;;
+    hidden: yes
   }
 
   dimension: bridgecalldurationbillsec {
     type: number
     sql: ${TABLE}.bridgecalldurationbillsec ;;
-    label: "Duration of Bridge Call (Sec)"
+    hidden: yes
   }
 
   dimension: bridgecalldurationrawsec {
     type: number
     sql: ${TABLE}.bridgecalldurationrawsec ;;
+    hidden: yes
   }
 
   dimension: callcharkey {
     type: number
     sql: ${TABLE}.callcharkey ;;
+    hidden: yes
   }
 
   dimension: callcount {
@@ -66,10 +69,10 @@ view: factcalldetail {
     sql: ${TABLE}.callstarttime ;;
   }
 #
-  dimension: months_since_startup {
-    type: number
-    sql: DATEDIFF(days,${dimcustomer.turnupdate_raw}, ${callstarttime_raw}) ;;
-  }
+#  dimension: months_since_startup {
+#    type: number
+#    sql: DATEDIFF(days,${dimcustomer.turnupdate_raw}, ${callstarttime_raw}) ;;
+#  }
 
   dimension_group: cdrcreatetimestamp {
     type: time
@@ -88,6 +91,7 @@ view: factcalldetail {
   dimension: comchannelkey {
     type: number
     sql: ${TABLE}.comchannelkey ;;
+    hidden: yes
   }
 
   dimension_group: createtimestamp {
@@ -111,66 +115,10 @@ view: factcalldetail {
     label: "{{_user_attributes['customcolumn1']}}"
   }
 
-  dimension: customcolumn10 {
-    type: string
-#     sql: ${TABLE}.customcolumn10 ;;
-
-  }
-
-  dimension: customcolumn11 {
-    type: string
-    sql: ${TABLE}.customcolumn11 ;;
-  }
-
-  dimension: customcolumn12 {
-    type: string
-    sql: ${TABLE}.customcolumn12 ;;
-  }
-
-  dimension: customcolumn13 {
-    type: string
-    sql: ${TABLE}.customcolumn13 ;;
-  }
-
-  dimension: customcolumn14 {
-    type: string
-    sql: ${TABLE}.customcolumn14 ;;
-  }
-
-  dimension: customcolumn15 {
-    type: string
-    sql: ${TABLE}.customcolumn15 ;;
-  }
-
-  dimension: customcolumn16 {
-    type: string
-    sql: ${TABLE}.customcolumn16 ;;
-  }
-
-  dimension: customcolumn17 {
-    type: string
-    sql: ${TABLE}.customcolumn17 ;;
-  }
-
-  dimension: customcolumn18 {
-    type: string
-    sql: ${TABLE}.customcolumn18 ;;
-  }
-
-  dimension: customcolumn19 {
-    type: string
-    sql: ${TABLE}.customcolumn19 ;;
-  }
-
   dimension: customcolumn2 {
     type: string
     sql: ${TABLE}.customcolumn2 ;;
     group_label: "Custom Columns"
-  }
-
-  dimension: customcolumn20 {
-    type: string
-    sql: ${TABLE}.customcolumn20 ;;
   }
 
   dimension: customcolumn3 {
@@ -182,41 +130,115 @@ view: factcalldetail {
   dimension: customcolumn4 {
     type: string
     sql: ${TABLE}.customcolumn4 ;;
+    group_label: "Custom Columns"
   }
 
   dimension: customcolumn5 {
     type: string
     sql: ${TABLE}.customcolumn5 ;;
+    group_label: "Custom Columns"
   }
 
   dimension: customcolumn6 {
     type: string
     sql: ${TABLE}.customcolumn6 ;;
+    group_label: "Custom Columns"
   }
 
   dimension: customcolumn7 {
     type: string
     sql: ${TABLE}.customcolumn7 ;;
+    group_label: "Custom Columns"
   }
 
   dimension: customcolumn8 {
     type: string
     sql: ${TABLE}.customcolumn8 ;;
+    group_label: "Custom Columns"
   }
 
   dimension: customcolumn9 {
     type: string
     sql: ${TABLE}.customcolumn9 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn10 {
+    type: string
+    sql: ${TABLE}.customcolumn10 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn11 {
+    type: string
+    sql: ${TABLE}.customcolumn11 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn12 {
+    type: string
+    sql: ${TABLE}.customcolumn12 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn13 {
+    type: string
+    sql: ${TABLE}.customcolumn13 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn14 {
+    type: string
+    sql: ${TABLE}.customcolumn14 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn15 {
+    type: string
+    sql: ${TABLE}.customcolumn15 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn16 {
+    type: string
+    sql: ${TABLE}.customcolumn16 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn17 {
+    type: string
+    sql: ${TABLE}.customcolumn17 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn18 {
+    type: string
+    sql: ${TABLE}.customcolumn18 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn19 {
+    type: string
+    sql: ${TABLE}.customcolumn19 ;;
+    group_label: "Custom Columns"
+  }
+
+  dimension: customcolumn20 {
+    type: string
+    sql: ${TABLE}.customcolumn20 ;;
+    group_label: "Custom Columns"
   }
 
   dimension: customerkey {
     type: number
     sql: ${TABLE}.customerkey ;;
+    hidden: yes
   }
 
   dimension: datekey {
     type: number
     sql: ${TABLE}.datekey ;;
+    hidden: yes
   }
 
   dimension: dnis {
@@ -227,37 +249,43 @@ view: factcalldetail {
   dimension: dniskey {
     type: number
     sql: ${TABLE}.dniskey ;;
+    hidden: yes
   }
 
   dimension: exitpointkey {
     type: number
     sql: ${TABLE}.exitpointkey ;;
+    hidden: yes
   }
 
   dimension: firstlegcalldurationbillsec {
     type: number
     sql: ${TABLE}.firstlegcalldurationbillsec ;;
+    hidden: yes
   }
 
   dimension: firstlegcalldurationrawsec {
     type: number
     sql: ${TABLE}.firstlegcalldurationrawsec ;;
+    hidden: yes
   }
 
   dimension: geospatialkey {
     type: number
     sql: ${TABLE}.geospatialkey ;;
+    hidden: yes
   }
 
   dimension: ivradvfeatureskey {
     type: number
     sql: ${TABLE}.ivradvfeatureskey ;;
+    hidden: yes
   }
 
   dimension: languagekey {
     type: number
     sql: ${TABLE}.languagekey ;;
-    view_label: "Dim - Call Characteristics"
+    hidden: yes
   }
 
   dimension_group: modifiedtimestamp {
@@ -277,128 +305,137 @@ view: factcalldetail {
   dimension: psadurationrawsec {
     type: number
     sql: ${TABLE}.psadurationrawsec ;;
+    hidden: yes
   }
 
   dimension: sitekey {
     type: number
     sql: ${TABLE}.sitekey ;;
+    hidden:  yes
   }
 
   dimension: timekey {
     type: number
     sql: ${TABLE}.timekey ;;
+    hidden:  yes
   }
 
   dimension: timezonekey {
     type: number
     sql: ${TABLE}.timezonekey ;;
+    hidden:  yes
   }
 
   dimension: totalcalldurationbillsec {
     type: number
     sql: ${TABLE}.totalcalldurationbillsec ;;
+    hidden:  yes
   }
 
-  dimension: total_call_duration_bill_tier {
-    type: tier
-    sql: ${totalcalldurationbillsec} ;;
-    tiers: [0,30,60,90,120]
-    style: integer
-  }
+#  dimension: total_call_duration_bill_tier {
+#    type: tier
+#    sql: ${totalcalldurationbillsec} ;;
+#    tiers: [0,30,60,90,120]
+#    style: integer
+#  }
 
   dimension: totalcalldurationrawsec {
     type: number
     sql: ${TABLE}.totalcalldurationrawsec ;;
+    hidden: yes
   }
 
   dimension: transfercount {
     type: number
     sql: ${TABLE}.transfercount ;;
+    hidden:  yes
   }
 
   dimension: transfernumber {
     type: string
     sql: ${TABLE}.transfernumber ;;
+    hidden:  yes
   }
 
   measure: AutomationRate {
     type: number
     value_format: "#.00\%"
     sql: 100.00 * (${CallCount} - ${TransferCount}) / ${CallCount} ;;
+    view_label: "Automation Rate"
     drill_fields: []
   }
 
   measure: CallCount {
     type: sum
     sql: ${callcount} ;;
-    drill_fields: [call_overview*]
+    view_label: "Call Count"
+  #  drill_fields: [call_overview*]
   }
 
-  measure: completed_call_count {
-    type: count
-    filters: {
-      field: dimcallcharacteristics.call_completed
-      value: "Yes"
-    }
-    drill_fields: [call_overview*]
-  }
+#  measure: completed_call_count {
+#    type: count
+#    filters: {
+#      field: dimcallcharacteristics.call_completed
+#      value: "Yes"
+#    }
+#    drill_fields: [call_overview*]
+#  }
 
-  measure: call_completion_pct {
-    type: number
-    sql: 1.0 * ${completed_call_count}/NULLIF(${CallCount},0) ;;
-    value_format_name: percent_2
-    description: "The Percentage of Calls that have been completed"
-  }
+#  measure: call_completion_pct {
+#    type: number
+#    sql: 1.0 * ${completed_call_count}/NULLIF(${CallCount},0) ;;
+#    value_format_name: percent_2
+#    description: "The Percentage of Calls that have been completed"
+#  }
 
 #   measure: call_count_variant {
 #     type: count
 #   }
 
-  measure: avg_call_count {
-    type: average
-    sql: ${callcount} ;;
-    value_format_name: decimal_2
-  }
-
   measure: FirstLegCallDurationBillMin {
     type: sum
     sql: ${TABLE}.firstlegcalldurationbillsec/60 ;;
+    view_label: "First Leg Call Duration - Bill Mins"
     drill_fields: []
   }
 
   measure: FirstLegCallDurationRawMin {
     type: sum
     sql: ${TABLE}.firstlegcalldurationrawsec/60 ;;
+    view_label: "First Leg Call Duration - Raw Mins"
     drill_fields: []
   }
 
   measure: TotalCallDurationBillMin {
     type: sum
     sql: ${TABLE}.totalcalldurationbillsec/60 ;;
+    view_label: "Total Call Duration - Bill Mins"
     drill_fields: []
   }
 
   measure: TotalCallDurationRawMin {
     type: sum
     sql: ${TABLE}.totalcalldurationrawsec/60 ;;
+    view_label: "Total Call Duration - Raw Mins"
     drill_fields: []
   }
 
   measure: TransferCount {
     type: sum
     sql: ${TABLE}.transfercount ;;
+    view_label: "Transfer Count"
     drill_fields: []
   }
 
-  measure: customer_count {
-    type: count_distinct
-    description: "Can Drill Down"
-    sql: ${customerkey} ;;
-    drill_fields: [customerkey,CallCount]
-  }
+#  measure: customer_count {
+#    type: count_distinct
+#    #description: "Can Drill Down"
+#    sql: ${customerkey} ;;
+#    drill_fields: [customerkey,CallCount]
+#  }
 
-  set: call_overview {
-    fields: [customerkey,languagekey,TotalCallDurationBillMin,completed_call_count]
-  }
+#  set: call_overview {
+#    fields: [customerkey,languagekey,TotalCallDurationBillMin,completed_call_count]
+#  }
 
 }

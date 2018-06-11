@@ -1,3 +1,8 @@
+view: dimcustomer_sf {
+  extends: [dimcustomer]
+  sql_table_name: public.dimcustomer ;;
+}
+
 view: dimcustomer {
   sql_table_name: poc_dw.dimcustomer ;;
 
@@ -219,10 +224,10 @@ view: dimcustomer {
     sql: ${TABLE}.turnupdate ;;
   }
 
-  dimension: tenure {
-    type: number
-    sql: DATEDIFF(days,${turnupdate_raw}, COALESCE(${turndowndate_raw},CURRENT_DATE)) ;;
-  }
+#  dimension: tenure {
+#    type: number
+#    sql: DATEDIFF(days,${turnupdate_raw}, COALESCE(${turndowndate_raw},CURRENT_DATE)) ;;
+#  }
 
 
 }

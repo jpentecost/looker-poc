@@ -28,6 +28,7 @@ persist_with: looker_poc_project_default_datagroup
 explore: factcalldetail {
   label: "Call Detail Record Data (Redshift)"
   view_label: "Fact - Call Detail"
+  group_label: "Contact Solutions Data"
 
   join: dimcallcharacteristics {
     view_label: "Dim - Call Characteristics"
