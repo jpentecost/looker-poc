@@ -65,5 +65,5 @@ explore: factcalldetail {
     sql_on: ${factcalldetail.timekey} = ${dimtime.timekey} ;;
   }
 }
-
-explore: test_dt {}
+#
+# explore: test_dt {}

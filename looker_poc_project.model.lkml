@@ -26,8 +26,16 @@ persist_with: looker_poc_project_default_datagroup
 #explore: factcalldetail {}
 
 explore: factcalldetail {
+#   access_filter: {
+#     user_attribute: division
+#     field: dimcustomer.division
+#   }
   label: "Call Detail Record Data (Redshift)"
   view_label: "Fact - Call Detail"
+
+
+
+
 
   join: dimcallcharacteristics {
     view_label: "Dim - Call Characteristics"
