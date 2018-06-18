@@ -32,6 +32,12 @@ explore: factcalldetail {
 #   }
   label: "Call Detail Record Data (Redshift)"
   view_label: "Fact - Call Detail"
+  group_label: "Contact Solutions Data"
+
+  access_filter: {
+    user_attribute: division
+    field: dimcustomer.division
+  }
 
 
 

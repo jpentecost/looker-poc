@@ -1,4 +1,4 @@
-view: sf_dimtime {
+view: dimtime_sf {
   extends: [dimtime]
   sql_table_name: public.dimtime ;;
 }

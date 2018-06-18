@@ -1,3 +1,8 @@
+view: dimcallcharacteristics_sf {
+  extends: [dimcallcharacteristics]
+  sql_table_name: public.dimcallcharacteristics ;;
+}
+
 view: dimcallcharacteristics {
   sql_table_name: poc_dw.dimcallcharacteristics ;;
 

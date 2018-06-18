@@ -1,3 +1,8 @@
+view: dimdate_sf {
+  extends: [dimdate]
+  sql_table_name: public.dimdate ;;
+}
+
 view: dimdate {
   sql_table_name: poc_dw.dimdate ;;
 
