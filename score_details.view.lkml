@@ -8,6 +8,8 @@ view: score_details {
                     "displayOrder" integer,
                     "value" text,
                     "score" integer) ;;
+
+#   persist_for: "24 hours"
   }
 
   dimension: id {
@@ -47,5 +49,34 @@ view: score_details {
     filters: { field: category value: "Behavior"}
     drill_fields: [item,value,category,score]
   }
+
+  measure: reputation_score_total_drill {
+    hidden: yes
+    type: count
+#     sql: 1 ;;
+    filters: { field: category value: "Reputation"}
+    drill_fields: [item,value,category,score]
+  }
+
+  measure: caller_id_score_total_drill {
+    hidden: yes
+    type: count
+#     sql: 1 ;;
+    filters: { field: category value: "Caller ID"}
+    drill_fields: [item,value,category,score]
+  }
+
+  measure: channel_score_total_drill {
+    hidden: yes
+    type: count
+#     sql: 1 ;;
+    filters: { field: category value: "Channel"}
+    drill_fields: [item,value,category,score]
+  }
+
+
+
+
+
 
 }
